@@ -2,99 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e1bcd99-e3b2-471d-bd6c-4c86510d5641" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/AllBlue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/Binary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/Grayscale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/HorizontalFlip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/Invert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/RotateLeft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/RotateRight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/VerticalFlip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/basic/VeryLong.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FilterSource/src/filter/bonus/FrenchFlag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/brush.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/bucket.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/cancel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/clipboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/closeall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/color.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/eraser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/file.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/filter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/opacity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/polygon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/redo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/rounded.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/save.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/saveas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/shape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/size.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asset/undo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/java_myPhotoshop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/MainController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/MainController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/filters/FiltersController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/historic/ActionPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/historic/HistoricController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/menus/MenuController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/menus/MenuController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/menus/PreviewFileChooser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/controller/panel/ImagePanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/DrawModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/HistoricModel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/HistoricModel$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/HistoricModel$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/HistoricModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/MainModel$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/model/MainModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/MainView.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/layout/MyHistoricRender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/layout/MyLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/layout/MyMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/layout/MyToolbar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/GUI/view/layout/ProjectPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/Filter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/AllBlue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/Binary.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/FrenchFlag.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/Grayscale.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/HorizontalFlip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/Invert.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/RotateLeft.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/RotateRight.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/VerticalFlip.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/filter/basic/VeryLong.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/main/Main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/java_myPhotoshop/main/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/filters/FiltersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/historic/ActionPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/historic/HistoricController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/menus/PreviewFileChooser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/controller/panel/ImagePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/model/DrawModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/model/HistoricModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/model/MainModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/MainView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/layout/MyHistoricRender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/layout/MyLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/layout/MyMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/layout/MyToolbar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/view/layout/ProjectPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,6 +11,10 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf>
@@ -122,7 +35,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/view/layout/MyMenu.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="84" column="64" selection-start-line="84" selection-start-column="64" selection-end-line="84" selection-end-column="64" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -130,9 +47,13 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="331" column="43" selection-start-line="331" selection-start-column="43" selection-end-line="331" selection-end-column="43" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -150,10 +71,10 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69" />
+            <state relative-caret-position="-5" />
           </provider>
         </entry>
       </file>
@@ -166,12 +87,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GUI/view/layout/ProjectPanel.java" />
+        <option value="$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="256" />
-    <option name="y" value="66" />
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="4" />
+    <option name="y" value="-13" />
     <option name="width" value="1264" />
     <option name="height" value="707" />
   </component>
@@ -210,6 +139,73 @@
               <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="historic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="menus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="panel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java_myPhotoshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java_myPhotoshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -228,6 +224,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IntelliJ IDEA 2019.1\project\java_myPhotoshop" />
+      <recent name="D:\IntelliJ IDEA 2019.1\project\java_myPhotoshop\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -271,32 +273,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592893419563</updated>
-      <workItem from="1592893422291" duration="248000" />
+      <workItem from="1592893422291" duration="581000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1592893705957</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592893705957</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248000" />
+    <option name="totallyTimeSpent" value="581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="256" y="66" width="1264" height="707" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22768533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32984293" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.29076922" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37347296" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37347296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -315,6 +325,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GUI/view/layout/MyToolbar.java">
       <provider selected="true" editor-type-id="text-editor" />
@@ -328,13 +342,7 @@
     <entry file="file://$PROJECT_DIR$/src/GUI/controller/historic/ActionPanel.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/view/layout/MyMenu.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/controller/menus/PreviewFileChooser.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/model/DrawModel.java">
@@ -348,12 +356,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69" />
+        <state relative-caret-position="-5" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/view/layout/MyMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="84" column="64" selection-start-line="84" selection-start-column="64" selection-end-line="84" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/controller/menus/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="331" column="43" selection-start-line="331" selection-start-column="43" selection-end-line="331" selection-end-column="43" />
+        </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -371,6 +416,19 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>java_myPhotoshop</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

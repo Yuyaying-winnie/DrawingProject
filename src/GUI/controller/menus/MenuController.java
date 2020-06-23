@@ -316,20 +316,20 @@ public class MenuController {
                              public boolean accept(File f) {
                                  try {
                                      if (f.getName().length() < 5 && !f.getName().contains(".")) {
-                                          System.out.println("1"+f.getName());
+                                         // System.out.println("1"+f.getName());
                                           return false;
                                      }
                                      if (f.isDirectory()) {
-                                         System.out.println("2"+f.getName());
+                                       //  System.out.println("2"+f.getName());
                                          return true;
                                      } else if (
 
                                              filters.contains(f.getName().substring(f.getName().length() - 4, f.getName().length()))) {
-                                         System.out.println("3"+f.getName());
+                                        // System.out.println("3"+f.getName());
                                          return true;
                                      } else if (
                                              filters.contains(f.getName().substring(f.getName().length() - 6, f.getName().length()))) {
-                                         System.out.println("4"+f.getName());
+                                         //System.out.println("4"+f.getName());
                                          return true;
                                      } else return false;
                                  } catch (Exception e) {
