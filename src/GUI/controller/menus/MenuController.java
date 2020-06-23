@@ -13,6 +13,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
@@ -339,7 +340,6 @@ public class MenuController {
 
                              public String getDescription() {
                                  return "Images Files";
-                                // return "JPG and GIF Images";
                              }
                          }
         );
@@ -374,20 +374,35 @@ public class MenuController {
     public void performExportAs(String format) {
         if (model.panelDraw.getTabCount() <= 0) return;
         ArrayList<String> a = new ArrayList<String>();
-        a.add(format);
+        System.out.println(format);
+        a.add("."+format);
+
         JFileChooser fc = getFileChooser(a);
         fc.showSaveDialog(model.mainPanel);
         File f = fc.getSelectedFile();
         String name = f.getPath();
+        System.out.println(name);
         if(!f.getPath().endsWith(format))
-           name = f.getPath() + format;
+            name = f.getPath() +"."+format;
+        //当该图片格式不符，则重命名
         if(name.indexOf(format)==-1) {
-            f = new File(fc.getCurrentDirectory(), name + format);
+            f = new File(fc.getCurrentDirectory(), name +"."+format);
             System.out.println("renamed");
             System.out.println(f.getName());
         }
         try {
-            ImageIO.write(MainModel.getInstance().getImg().getImage(), format,new File(name));
+               BufferedImage rendImage = MainModel.getInstance().getImg().getImage();
+               //ImageIO.write(rendImage,format,new File(name));
+            //bmp && jpg
+            if(!format.equals("png")) {
+                //重绘
+                BufferedImage newBufferedImage = new BufferedImage(rendImage.getWidth(),
+                        rendImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+                newBufferedImage.createGraphics().drawImage(rendImage, 0, 0, Color.WHITE, null);
+                ImageIO.write(newBufferedImage, format, new File(name));
+            }else {
+                ImageIO.write(rendImage, format, new File(name));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
