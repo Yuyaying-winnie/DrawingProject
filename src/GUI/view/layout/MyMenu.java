@@ -23,7 +23,7 @@ public class MyMenu extends JMenuBar {
     public void generateMenus(MainController controller) {
         generateFileMenu(controller);
         generateEditMenu(controller);
-        generateFiltersMenu(controller);
+       // generateFiltersMenu(controller);
     }
 
     private void generateFileMenu(MainController controller) {
@@ -165,7 +165,6 @@ public class MyMenu extends JMenuBar {
 
     private void generateFiltersMenu(MainController controller) {
         /****** FILTERS MENU *****/
-
 
         JMenu filters = new JMenu();
         filters.setText("Filters");

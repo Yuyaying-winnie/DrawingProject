@@ -1,2 +1,0 @@
-# DrawingProject
-Hello! 

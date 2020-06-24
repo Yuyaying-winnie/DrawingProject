@@ -20,17 +20,18 @@ public class MyToolbar extends JPanel {
         this.mainPanel = mainPanel;
 
 
-        drawPanel.setPreferredSize(new Dimension(200, 500));
-        erasePanel.setPreferredSize(new Dimension(200, 500));
-        textPanel.setPreferredSize(new Dimension(200, 500));
-        polygonPanel.setPreferredSize(new Dimension(200, 500));
-        bucketPanel.setPreferredSize(new Dimension(200, 500));
+        drawPanel.setPreferredSize(new Dimension(200, 600));
+        erasePanel.setPreferredSize(new Dimension(200, 600));
+        textPanel.setPreferredSize(new Dimension(200, 600));
+        polygonPanel.setPreferredSize(new Dimension(200, 600));
+        bucketPanel.setPreferredSize(new Dimension(200, 600));
 
         erasePanel.setBorder(new EtchedBorder());
         drawPanel.setBorder(new EtchedBorder());
         textPanel.setBorder(new EtchedBorder());
         polygonPanel.setBorder(new EtchedBorder());
         bucketPanel.setBorder(new EtchedBorder());
+
 
         drawPanel.setVisible(false);
         erasePanel.setVisible(false);
@@ -107,7 +108,7 @@ public class MyToolbar extends JPanel {
         color.setIcon(new ImageIcon("asset/color.png"));
 
         jPanel.add(color);
-        jPanel.setPreferredSize(new Dimension(190, 25));
+        jPanel.setPreferredSize(new Dimension(150, 25));
 
 
         drawPanel.add(jPanel);
@@ -187,6 +188,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/size.png"));
         j.add(jLabel);
         JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);//滑块
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(25);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -203,6 +205,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/size.png"));
         j.add(jLabel);
         JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 5, 15, 7);
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(5);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -220,6 +223,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/rounded.png"));
         j.add(jLabel);
         JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 100, 0);
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(25);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -257,7 +261,7 @@ public class MyToolbar extends JPanel {
                     jPanel.setBackground(new Color(DrawModel.getInstance().getColor().getRGB() | 0xFF000000));
                 }
         );
-        drawbutton.setPreferredSize(new Dimension(190, 25));
+        drawbutton.setPreferredSize(new Dimension(150, 25));
 
         return drawbutton;
     }
@@ -268,6 +272,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/opacity.png"));
         j.add(jLabel);
 
+        opacity.setPreferredSize(new Dimension(150,50));
         opacity.setMajorTickSpacing(99);
         opacity.setMinorTickSpacing(25);
         opacity.setPaintTicks(true);
