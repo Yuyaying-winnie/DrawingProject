@@ -100,6 +100,7 @@ public class MyToolbar extends JPanel {
         generateBucketMenu();
     }
 
+    /** 画笔 **/
     public void generateDrawMenu() {
         JPanel jPanel = new JPanel();
         JLabel color = new JLabel("Your color :");
@@ -112,14 +113,15 @@ public class MyToolbar extends JPanel {
         drawPanel.add(jPanel);
         drawPanel.add(getColorChooser(jPanel));
         drawPanel.add(getSizeChooser(drawPanel));
-        String label[] = {"Oval", "Square", "Rectangle"};
-
-        drawPanel.add(getShapeChooser(drawPanel, label));
+        String label[] = {"Pencil", "Crayon", "InkBrush"};
+        /** 笔形 **/
+         drawPanel.add(getShapeChooser(drawPanel, label));
 
         add(drawPanel);
 
     }
 
+    /** 橡皮擦 **/
     public void generateEraseMenu() {
         erasePanel.add(getSizeChooser(erasePanel));
         erasePanel.add(getOpacityChooser(erasePanel));
@@ -184,7 +186,7 @@ public class MyToolbar extends JPanel {
         JLabel jLabel = new JLabel("Size :");
         jLabel.setIcon(new ImageIcon("asset/size.png"));
         j.add(jLabel);
-        JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);
+        JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);//滑块
         sizeChooser.setMajorTickSpacing(25);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -229,15 +231,19 @@ public class MyToolbar extends JPanel {
         return sizeChooser;
     }
 
+    /** 改变笔形 **/
     public JList getShapeChooser(JPanel j, String label[]) {
         JLabel jLabel = new JLabel("Shape :");
         jLabel.setIcon(new ImageIcon("asset/shape.png"));
         j.add(jLabel);
         JList list = new JList<>(label);
-        DefaultListSelectionModel sm = new DefaultListSelectionModel();
-        sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        list.setSelectionModel(sm);
-        list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String) list.getModel().getElementAt(list.getSelectedIndex())));
+
+          DefaultListSelectionModel sm = new DefaultListSelectionModel();
+          sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //一次只能选择一项
+          list.setSelectionModel(sm);
+          list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String)
+                  list.getModel().getElementAt(list.getSelectedIndex())));
+
         return list;
     }
 
