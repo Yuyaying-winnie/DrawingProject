@@ -36,8 +36,10 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
     public transient boolean mouseIn = false;
     public transient boolean dragged = false;
     public HistoricController historic;
-    
-    public int x1, x2, y1, y2;  //
+
+    public int x1, x2, y1, y2;  //鼠标按压、释放坐标
+    public int isRes;//判断鼠标是否释放
+
 
     /**
      * Create the ImagePanel
@@ -187,8 +189,9 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         switch (model.getType()) {
             case "draw":
                 if (model.getShape().equals("Pencil")) {
-                    Pencil pencil = new Pencil(g,model,p);
+                    Pencil pencil = new Pencil(g,model,p,isRes);
                     pencil.draw();
+                    isRes=1;
                 } else if (model.getShape().equals("Crayon")){
                      Crayon crayon = new Crayon(g,model,p);
                      crayon.draw();
@@ -215,6 +218,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
     @Override
     public void mouseReleased(MouseEvent e) {
     	DrawModel model = DrawModel.getInstance();
+        isRes=0;
     	x2 = e.getX();
 		y2 = e.getY();
         //if (!mouseIn || !dragged || DrawModel.getInstance().getType().equals("polygon")|| DrawModel.getInstance().getType().equals("bucket")) return;
