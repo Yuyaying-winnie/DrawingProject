@@ -117,6 +117,7 @@ public class MyToolbar extends JPanel {
         String label[] = {"Pencil", "Crayon", "InkBrush"};
         /** 笔形 **/
          drawPanel.add(getShapeChooser(drawPanel, label));
+         
 
         add(drawPanel);
 
@@ -145,7 +146,7 @@ public class MyToolbar extends JPanel {
         add(textPanel);
 
     }
-
+     /** 修改，选择画圆、矩形、直线 **/
     public void generatePolygonsMenu() {
 
         JPanel jPanel = new JPanel();
@@ -158,9 +159,9 @@ public class MyToolbar extends JPanel {
         polygonPanel.add(jPanel);
         polygonPanel.add(getColorChooser(jPanel));
         polygonPanel.add(getRadiusChooser(polygonPanel));
-        String label[] = {"Rectangle", "Oval", "Polygon"};
+        String label[] = {"Line", "Rectangle", "Circle"};
 
-        polygonPanel.add(getShapeChooser(polygonPanel, label));
+        polygonPanel.add(getdrawPolygonChooser(polygonPanel, label));
         polygonPanel.add(getNumberVertices(polygonPanel));
 
         add(polygonPanel);
@@ -246,11 +247,27 @@ public class MyToolbar extends JPanel {
           sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //一次只能选择一项
           list.setSelectionModel(sm);
           list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String)
-                  list.getModel().getElementAt(list.getSelectedIndex())));
+          
+        		  list.getModel().getElementAt(list.getSelectedIndex())));   //add
 
         return list;
     }
 
+    public JList getdrawPolygonChooser(JPanel j, String label[]) {
+        JLabel jLabel = new JLabel("draw :");
+        jLabel.setIcon(new ImageIcon("asset/shape.png"));
+        j.add(jLabel);
+        JList list = new JList<>(label);
+
+          DefaultListSelectionModel sm = new DefaultListSelectionModel();
+          sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //一次只能选择一项
+          list.setSelectionModel(sm);
+          list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String)
+          list.getModel().getElementAt(list.getSelectedIndex())));   //add
+
+        return list;
+    }
+    
     public JButton getColorChooser(JPanel jPanel) {
 
         JButton drawbutton = new JButton();
