@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
 /**
- * Created by jean on 27/04/2016.
+ * 记录Action
  */
 public class ActionPanel implements Serializable {
     public String name;

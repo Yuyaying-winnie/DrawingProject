@@ -8,11 +8,11 @@ import java.util.ArrayList;
  */
 public class DrawModel {
 
-
+    //默认参数
     private int size = 25;
     private int opacity = 50;
     private int radius = 0;
-    private Color color = Color.white;
+    private Color color = Color.BLACK;
     private ArrayList<Point> clickPoints = new ArrayList<Point>();
     private String type = "";
     private String shape = "";
@@ -30,10 +30,11 @@ public class DrawModel {
         clickPoints = new ArrayList<Point>();
     }
 
+    /**重置**/
     public void reset() {
         size = 25;
         opacity = 50;
-        color = Color.white;
+        color = Color.BLACK;
         type = "";
         clickPoints = new ArrayList<Point>();
         nbshape = 7;

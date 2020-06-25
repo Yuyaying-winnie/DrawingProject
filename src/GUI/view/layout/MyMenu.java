@@ -23,7 +23,7 @@ public class MyMenu extends JMenuBar {
     public void generateMenus(MainController controller) {
         generateFileMenu(controller);
         generateEditMenu(controller);
-        generateFiltersMenu(controller);
+       // generateFiltersMenu(controller);
     }
 
     private void generateFileMenu(MainController controller) {
@@ -90,12 +90,17 @@ public class MyMenu extends JMenuBar {
         exportMenu.setIcon(new ImageIcon("asset/export.png"));
         mi = new JMenuItem();
         mi.setText("jpg");
-        mi.addActionListener(e -> controller.menuController.performExportAs(".jpg"));
+        mi.addActionListener(e -> controller.menuController.performExportAs("jpg"));
         exportMenu.add(mi);
 
         mi = new JMenuItem();
         mi.setText("png");
-        mi.addActionListener(e -> controller.menuController.performExportAs(".png"));
+        mi.addActionListener(e -> controller.menuController.performExportAs("png"));
+        exportMenu.add(mi);
+
+        mi = new JMenuItem();
+        mi.setText("bmp");
+        mi.addActionListener(e -> controller.menuController.performExportAs("bmp"));
         exportMenu.add(mi);
 
         file.add(exportMenu);
@@ -160,7 +165,6 @@ public class MyMenu extends JMenuBar {
 
     private void generateFiltersMenu(MainController controller) {
         /****** FILTERS MENU *****/
-
 
         JMenu filters = new JMenu();
         filters.setText("Filters");

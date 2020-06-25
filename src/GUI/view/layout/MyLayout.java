@@ -22,45 +22,44 @@ public class MyLayout {
         model.mainPanel.setLayout(new BorderLayout());
 
         JTabbedPane panelDraw = model.panelDraw;  //选项卡面板
-        panelDraw.setPreferredSize(new Dimension(1000, 600));
+        panelDraw.setPreferredSize(new Dimension(600, 600));
+   //     panelDraw.setBackground(new Color(255, 255, 255));
         model.mainPanel.add(panelDraw, BorderLayout.CENTER);
 
         /****** MENU *****/
         MyMenu panelTop = new MyMenu(model.mainPanel, panelDraw);
         panelTop.generateMenus(controller);
-
-        /**** PANEL ****/
-
-        panelTop.setBackground(new Color(110, 110, 110));
+        panelTop.setBackground(new Color(255, 255, 255));
         panelTop.setPreferredSize(new Dimension(0, 25));
         model.mainPanel.add(panelTop, BorderLayout.PAGE_START);
 
+        /**** PANEL ****/
         JPanel panelStatus = new JPanel();
         panelStatus.setPreferredSize(new Dimension(0, 25));
-        panelStatus.setBackground(new Color(110, 110, 110));
+        panelStatus.setBackground(new Color(255, 255, 255));
 
         panelStatus.add(model.statusBar);
 
         model.mainPanel.add(panelStatus, BorderLayout.PAGE_END);
 
         /**** HISTORIC ****/
-
-        JList panelHistoric = HistoricModel.getInstance().historicList;
-        panelHistoric.setSize(new Dimension(200,0));
-        panelHistoric.setBackground(new Color(150, 150, 150));
-        panelHistoric.setSelectionBackground(Color.LIGHT_GRAY);
-        panelHistoric.setCellRenderer(new MyHistoricRender());
-        JScrollPane spane = new JScrollPane(panelHistoric);  //滚动面板
-        spane.getVerticalScrollBar().setMaximumSize(model.mainPanel.getSize());
-        spane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
-        model.mainPanel.add(spane, BorderLayout.EAST);
+        //TODO 取消显示历史图片
+//        JList panelHistoric = HistoricModel.getInstance().historicList;
+//        panelHistoric.setSize(new Dimension(200,0));
+//        panelHistoric.setBackground(new Color(150, 150, 150));
+//        panelHistoric.setSelectionBackground(Color.LIGHT_GRAY);
+//        panelHistoric.setCellRenderer(new MyHistoricRender());
+//        JScrollPane spane = new JScrollPane(panelHistoric);  //滚动面板
+//        spane.getVerticalScrollBar().setMaximumSize(model.mainPanel.getSize());
+//        spane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+//        model.mainPanel.add(spane, BorderLayout.EAST);
 
 
         /** TOOLBAR **/
         MyToolbar toolbar = new MyToolbar(model.mainPanel);
         toolbar.generateButtons();
-        toolbar.setPreferredSize(new Dimension(200, 0));
-        toolbar.setBackground(new Color(200, 200, 200));
+        toolbar.setPreferredSize(new Dimension(150, 0));
+        toolbar.setBackground(new Color(187, 214, 211, 255));
 
         model.mainPanel.add(toolbar, BorderLayout.WEST);
         return;
@@ -71,6 +70,6 @@ public class MyLayout {
     }
 
     public String getName() {
-        return "MyPhotoshop by treibe_a";
+        return "Little Painter";
     }
 }

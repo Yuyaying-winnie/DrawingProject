@@ -13,6 +13,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
@@ -97,7 +98,7 @@ public class MenuController {
         if (name == null || name.isEmpty()) return;
         ProjectPanel p = new ProjectPanel(
                 new ImagePanel(
-                        new BufferedImage(500, 500, 2),
+                        new BufferedImage(1000, 1000, 2),
                         name + ".myPSD")
         );
         model.panelDraw.addTab(name + ".myPSD", p.getContent());
@@ -187,12 +188,7 @@ public class MenuController {
         ArrayList<String> a = new ArrayList<String>();
         a.add(".myPSD");
         JFileChooser fc = getFileChooser(a);
-      //  JFileChooser fc = new JFileChooser();
-    //    FileNameExtensionFilter filter = new FileNameExtensionFilter("请选择图片文件","bmp","jpg","png");
-      //  fc.setFileFilter(filter);
         fc.setMultiSelectionEnabled(false); //该文件选择器只能选择一个文件
-       // fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutput oos = null;
         /*
@@ -339,7 +335,6 @@ public class MenuController {
 
                              public String getDescription() {
                                  return "Images Files";
-                                // return "JPG and GIF Images";
                              }
                          }
         );
@@ -374,20 +369,32 @@ public class MenuController {
     public void performExportAs(String format) {
         if (model.panelDraw.getTabCount() <= 0) return;
         ArrayList<String> a = new ArrayList<String>();
-        a.add(format);
+        a.add("."+format);
+
         JFileChooser fc = getFileChooser(a);
         fc.showSaveDialog(model.mainPanel);
         File f = fc.getSelectedFile();
         String name = f.getPath();
         if(!f.getPath().endsWith(format))
-           name = f.getPath() + format;
+            name = f.getPath() +"."+format;
+        //当该图片格式不符，则重命名
         if(name.indexOf(format)==-1) {
-            f = new File(fc.getCurrentDirectory(), name + format);
+            f = new File(fc.getCurrentDirectory(), name +"."+format);
             System.out.println("renamed");
             System.out.println(f.getName());
         }
         try {
-            ImageIO.write(MainModel.getInstance().getImg().getImage(), format,new File(name));
+               BufferedImage rendImage = MainModel.getInstance().getImg().getImage();
+            //bmp && jpg
+            if(!format.equals("png")) {
+                //重绘
+                BufferedImage newBufferedImage = new BufferedImage(rendImage.getWidth(),
+                        rendImage.getHeight(), BufferedImage.TYPE_INT_RGB);
+                newBufferedImage.createGraphics().drawImage(rendImage, 0, 0, Color.WHITE, null);
+                ImageIO.write(newBufferedImage, format, new File(name));
+            }else {
+                ImageIO.write(rendImage, format, new File(name));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

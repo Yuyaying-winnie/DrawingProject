@@ -1,4 +1,4 @@
-package filter.basic;
+package filter.bonus;
 
 import filter.Filter;
 

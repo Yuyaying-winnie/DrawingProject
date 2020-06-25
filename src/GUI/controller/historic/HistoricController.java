@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 /**
- * Created by jean on 27/04/2016.
  * 历史记录容器
  */
 public class HistoricController implements Serializable {
