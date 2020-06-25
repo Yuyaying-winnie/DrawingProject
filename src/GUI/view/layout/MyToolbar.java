@@ -20,17 +20,18 @@ public class MyToolbar extends JPanel {
         this.mainPanel = mainPanel;
 
 
-        drawPanel.setPreferredSize(new Dimension(200, 500));
-        erasePanel.setPreferredSize(new Dimension(200, 500));
-        textPanel.setPreferredSize(new Dimension(200, 500));
-        polygonPanel.setPreferredSize(new Dimension(200, 500));
-        bucketPanel.setPreferredSize(new Dimension(200, 500));
+        drawPanel.setPreferredSize(new Dimension(200, 600));
+        erasePanel.setPreferredSize(new Dimension(200, 600));
+        textPanel.setPreferredSize(new Dimension(200, 600));
+        polygonPanel.setPreferredSize(new Dimension(200, 600));
+        bucketPanel.setPreferredSize(new Dimension(200, 600));
 
         erasePanel.setBorder(new EtchedBorder());
         drawPanel.setBorder(new EtchedBorder());
         textPanel.setBorder(new EtchedBorder());
         polygonPanel.setBorder(new EtchedBorder());
         bucketPanel.setBorder(new EtchedBorder());
+
 
         drawPanel.setVisible(false);
         erasePanel.setVisible(false);
@@ -100,26 +101,28 @@ public class MyToolbar extends JPanel {
         generateBucketMenu();
     }
 
+    /** 画笔 **/
     public void generateDrawMenu() {
         JPanel jPanel = new JPanel();
         JLabel color = new JLabel("Your color :");
         color.setIcon(new ImageIcon("asset/color.png"));
 
         jPanel.add(color);
-        jPanel.setPreferredSize(new Dimension(190, 25));
+        jPanel.setPreferredSize(new Dimension(150, 25));
 
 
         drawPanel.add(jPanel);
         drawPanel.add(getColorChooser(jPanel));
         drawPanel.add(getSizeChooser(drawPanel));
-        String label[] = {"Oval", "Square", "Rectangle"};
-
-        drawPanel.add(getShapeChooser(drawPanel, label));
+        String label[] = {"Pencil", "Crayon", "InkBrush"};
+        /** 笔形 **/
+         drawPanel.add(getShapeChooser(drawPanel, label));
 
         add(drawPanel);
 
     }
 
+    /** 橡皮擦 **/
     public void generateEraseMenu() {
         erasePanel.add(getSizeChooser(erasePanel));
         erasePanel.add(getOpacityChooser(erasePanel));
@@ -184,7 +187,8 @@ public class MyToolbar extends JPanel {
         JLabel jLabel = new JLabel("Size :");
         jLabel.setIcon(new ImageIcon("asset/size.png"));
         j.add(jLabel);
-        JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);
+        JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 50, 25);//滑块
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(25);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -201,6 +205,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/size.png"));
         j.add(jLabel);
         JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 5, 15, 7);
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(5);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -218,6 +223,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/rounded.png"));
         j.add(jLabel);
         JSlider sizeChooser = new JSlider(JSlider.HORIZONTAL, 0, 100, 0);
+        sizeChooser.setPreferredSize(new Dimension(150,50));
         sizeChooser.setMajorTickSpacing(25);
         sizeChooser.setMinorTickSpacing(1);
         sizeChooser.setPaintTicks(true);
@@ -229,15 +235,19 @@ public class MyToolbar extends JPanel {
         return sizeChooser;
     }
 
+    /** 改变笔形 **/
     public JList getShapeChooser(JPanel j, String label[]) {
         JLabel jLabel = new JLabel("Shape :");
         jLabel.setIcon(new ImageIcon("asset/shape.png"));
         j.add(jLabel);
         JList list = new JList<>(label);
-        DefaultListSelectionModel sm = new DefaultListSelectionModel();
-        sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        list.setSelectionModel(sm);
-        list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String) list.getModel().getElementAt(list.getSelectedIndex())));
+
+          DefaultListSelectionModel sm = new DefaultListSelectionModel();
+          sm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); //一次只能选择一项
+          list.setSelectionModel(sm);
+          list.addListSelectionListener(e -> DrawModel.getInstance().setShape((String)
+                  list.getModel().getElementAt(list.getSelectedIndex())));
+
         return list;
     }
 
@@ -251,7 +261,7 @@ public class MyToolbar extends JPanel {
                     jPanel.setBackground(new Color(DrawModel.getInstance().getColor().getRGB() | 0xFF000000));
                 }
         );
-        drawbutton.setPreferredSize(new Dimension(190, 25));
+        drawbutton.setPreferredSize(new Dimension(150, 25));
 
         return drawbutton;
     }
@@ -262,6 +272,7 @@ public class MyToolbar extends JPanel {
         jLabel.setIcon(new ImageIcon("asset/opacity.png"));
         j.add(jLabel);
 
+        opacity.setPreferredSize(new Dimension(150,50));
         opacity.setMajorTickSpacing(99);
         opacity.setMinorTickSpacing(25);
         opacity.setPaintTicks(true);

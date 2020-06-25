@@ -164,21 +164,28 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         MainController.applyModification(image, new ActionPanel(DrawModel.getInstance().getType(), image));
     }
 
+    /**鼠标拖动**/
     @Override
     public void mouseDragged(MouseEvent e) {
         DrawModel model = DrawModel.getInstance();
         dragged = true;
-        Graphics g = image.getGraphics();
-        g.setColor(model.getColor());
+        //Graphics g = image.getGraphics();  //画笔
+        Graphics2D g = (Graphics2D) image.getGraphics();
+        g.setColor(model.getColor());   //取颜色
+
         Point p = e.getPoint();
         switch (model.getType()) {
             case "draw":
-                if (model.getShape().equals("Oval"))
-                    g.fillOval(p.x, p.y, model.getSize(), model.getSize());
-                else if (model.getShape().equals("Square"))
-                    g.fillRect(p.x, p.y, model.getSize(), model.getSize());
-                else if (model.getShape().equals("Rectangle"))
-                    g.fillRect(p.x, p.y, model.getSize() * 2, model.getSize());
+                if (model.getShape().equals("Pencil")) {
+                    Pencil pencil = new Pencil(g,model,p);
+                    pencil.draw();
+                } else if (model.getShape().equals("Crayon")){
+                     Crayon crayon = new Crayon(g,model,p);
+                     crayon.draw();
+                } else if (model.getShape().equals("InkBrush")) {
+                    InkBrush inkBrush = new InkBrush(g,model,p,dragged);
+                    inkBrush.draw();
+                }
                 break;
             case "erase":
 
@@ -192,6 +199,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
 
     @Override
     public void mousePressed(MouseEvent e) {
+
     }
 
     @Override
@@ -200,6 +208,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         if(!DrawModel.getInstance().getType().equals("erase") && DrawModel.getInstance().getShape().isEmpty()) return;
         MainController.applyModification(image, new ActionPanel(DrawModel.getInstance().getType(), image));
         dragged = false;
+
     }
 
     @Override
@@ -294,4 +303,6 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         }
     }
 
+
 }
+

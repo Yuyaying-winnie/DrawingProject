@@ -16,6 +16,7 @@ import java.util.Vector;
 /**
  * This is the main model of the application, this is a singleton, so everyone can access it
  * whenever it is needed
+ * 单例
  */
 //Observable 观察对象
 
@@ -30,7 +31,7 @@ public class MainModel extends Observable {
     private MainModel() {
         this.mainPanel = new JPanel();
         this.panelDraw = new JTabbedPane();
-        this.statusBar = new JLabel("Welcome to myphotoshop :)");
+        this.statusBar = new JLabel("Welcome to Little Painter :)");
         addListeners();
     }
 
@@ -50,6 +51,7 @@ public class MainModel extends Observable {
 
     /**
      * Set the image of the current panel and add an entry to the history
+     * 设置当前面板的图像并添加至历史记录
      * @param img image of the panel
      * @param action the action applied
      */
@@ -69,6 +71,7 @@ public class MainModel extends Observable {
 
     /**
      * Set the image panel but does not add an entry to the history
+     * 设置当前面板的图像，但不加入历史记录中
      * @param img
      */
     public void setPrivateImg(BufferedImage img) {
