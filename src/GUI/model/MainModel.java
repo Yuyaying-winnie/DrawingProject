@@ -14,18 +14,15 @@ import java.util.Vector;
 
 @SuppressWarnings("unchecked")
 /**
- * This is the main model of the application, this is a singleton, so everyone can access it
- * whenever it is needed
- * 单例
+ * 单例模式
  */
-//Observable 观察对象
 
 public class MainModel extends Observable {
 
-    public JPanel mainPanel; //容器
-    public JTabbedPane panelDraw; //标签面板
-    public JLabel statusBar; //基础组件
-    public ArrayList<Thread> filterThread = new ArrayList<Thread>(); //线程
+    public JPanel mainPanel;
+    public JTabbedPane panelDraw;
+    public JLabel statusBar;
+    public ArrayList<Thread> filterThread = new ArrayList<Thread>();
     public MainView mainView;
 
     private MainModel() {
@@ -42,7 +39,6 @@ public class MainModel extends Observable {
     }
 
     /**
-     *返回已选标签的组件中的第一个组件
      * @return the current image
      */
     public ImagePanel getImg() {
@@ -50,7 +46,6 @@ public class MainModel extends Observable {
     }
 
     /**
-     * Set the image of the current panel and add an entry to the history
      * 设置当前面板的图像并添加至历史记录
      * @param img image of the panel
      * @param action the action applied
@@ -62,15 +57,8 @@ public class MainModel extends Observable {
         setPrivateImg(img);
     }
 
-    @SuppressWarnings( "deprecation" )
-    public void cancelFilter() {
-        if (filterThread.isEmpty()) return;
-        this.filterThread.get(this.filterThread.size() - 1).stop();
-        this.filterThread.remove(this.filterThread.size() - 1);
-    }
 
     /**
-     * Set the image panel but does not add an entry to the history
      * 设置当前面板的图像，但不加入历史记录中
      * @param img
      */
@@ -78,10 +66,10 @@ public class MainModel extends Observable {
         if (HistoricModel.getInstance().getHistoric().isEmpty()) return;
         if (this.panelDraw.getTabCount() <= 0) return;
         getImg().setImage(img);
-        notifyObservers();//通知观察者发生变化，并调用update（）方法
+        notifyObservers();
         setChanged();
         statusBar.setText(HistoricModel.getInstance().getHistoric().getLastHistoricName());
-        HistoricModel.getInstance().setHistoric();  //添加到历史容器列表中
+        HistoricModel.getInstance().setHistoric();
     }
 
     /**
@@ -104,7 +92,6 @@ public class MainModel extends Observable {
     }
 
 
-    //STATUS
     public void setStatusBar(String text) {
         this.statusBar.setText(text);
     }

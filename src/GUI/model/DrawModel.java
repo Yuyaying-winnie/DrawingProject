@@ -3,9 +3,7 @@ package GUI.model;
 import java.awt.*;
 import java.util.ArrayList;
 
-/**
- * Created by jean on 09/05/2016.
- */
+//绘画
 public class DrawModel {
 
     //默认参数

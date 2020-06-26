@@ -1,11 +1,5 @@
 package GUI.controller.panel;
 
-/**
- * @description:
- * @author: Winnie
- * @time: 2020/6/24 15:41
- */
-
 import GUI.model.DrawModel;
 
 import java.awt.*;

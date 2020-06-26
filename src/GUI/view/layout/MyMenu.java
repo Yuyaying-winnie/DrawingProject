@@ -3,16 +3,15 @@ package GUI.view.layout;
 import GUI.controller.MainController;
 import GUI.model.HistoricModel;
 import GUI.model.MainModel;
-import filter.Filter;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
-//我的标题栏
+//菜单栏
 public class MyMenu extends JMenuBar {
     public JPanel mainPanel;
     public JTabbedPane panelDraw;
-    public JFileChooser fc; //文件选择器
+    public JFileChooser fc;
 
     MyMenu(JPanel mainPanel, JTabbedPane panelDraw) {
         this.mainPanel = mainPanel;
@@ -23,7 +22,6 @@ public class MyMenu extends JMenuBar {
     public void generateMenus(MainController controller) {
         generateFileMenu(controller);
         generateEditMenu(controller);
-       // generateFiltersMenu(controller);
     }
 
     private void generateFileMenu(MainController controller) {
@@ -40,11 +38,9 @@ public class MyMenu extends JMenuBar {
         /***创建项目***/
         mi.setText("Create");
         mi.setIcon(new ImageIcon("asset/new.png"));
-        file.add(mi);
-        //快捷键
-        mi.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK));
 
-        //创建项目
+        file.add(mi);
+        mi.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_MASK));
         mi.addActionListener(e -> controller.menuController.createProject());
 
         /***打开项目***/
@@ -146,46 +142,15 @@ public class MyMenu extends JMenuBar {
         mi.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_MASK + KeyEvent.SHIFT_DOWN_MASK));
         edit.add(mi);
 
-        mi = new JMenuItem();
-        mi.setText("Cancel Filter");
-        mi.setIcon(new ImageIcon("asset/cancel.png"));
-        mi.addActionListener(e -> MainModel.getInstance().cancelFilter());
-        edit.add(mi);
-
-        mi = new JMenuItem();
-        mi.setText("Change historic size");
-        mi.setIcon(new ImageIcon("asset/history.png"));
-
-        mi.addActionListener(e -> HistoricModel.getInstance().setSize());
-        edit.add(mi);
+//        mi = new JMenuItem();
+//        mi.setText("Change historic size");
+//        mi.setIcon(new ImageIcon("asset/history.png"));
+//
+//        mi.addActionListener(e -> HistoricModel.getInstance().setSize());
+//        edit.add(mi);
 
 
     }
 
-
-    private void generateFiltersMenu(MainController controller) {
-        /****** FILTERS MENU *****/
-
-        JMenu filters = new JMenu();
-        filters.setText("Filters");
-        filters.setIcon(new ImageIcon("asset/filter.png"));
-
-        filters.setMnemonic(KeyEvent.VK_I);
-        this.add(filters);
-
-        for (Class aClass : controller.filtersController.getClasses()) {
-            JMenuItem mi = new JMenuItem();
-            try {
-                Filter filter = (Filter)aClass.newInstance();
-                mi.setText(filter.getName());
-                mi.addActionListener(e -> controller.applyFilter(filter));
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            filters.add(mi);
-        }
-
-    }
 }
+

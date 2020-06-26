@@ -20,8 +20,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * We give you this class to help you display images.
- * You are free to use it or not, to modify it.
+ * display images.
  */
 public class ImagePanel extends JPanel implements Serializable, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = -314159265358979323L;
@@ -36,7 +35,6 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
     public transient boolean mouseIn = false;
     public transient boolean dragged = false;
     public HistoricController historic;
-
     public int x1, x2, y1, y2;  //鼠标按压、释放坐标
     public int isRes;//判断鼠标是否释放
 
@@ -56,6 +54,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         imageType = image.getType();
         pixels = new int[width * height];
         image.getRGB(0, 0, width, height, pixels, 0, width);
+        setBackground(Color.white);
         addMouseMotionListener(this);
         addMouseListener(this);
     }
@@ -78,6 +77,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         imageType = image.getType();
         pixels = new int[width * height];
         image.getRGB(0, 0, width, height, pixels, 0, width);
+        setBackground(Color.white);
         addMouseMotionListener(this);
         addMouseListener(this);
     }
@@ -151,17 +151,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         if (!model.getType().equals("polygon")) {
         	return;
         }
-        /*
-        if (model.getShape().equals("Polygon")) {
-        	
-            model.addPoint(e.getPoint());
-            System.out.print("点击Polygon");
-            if (model.getNbshape() == model.getClickPoints().size())
-                drawPolygon();
-            return;
-        }
-        */
-        //if polygon is not selected, reset all point
+
         if (model.getClickPoints().size() > 1) model.resetPoint();
         if (model.getClickPoints().isEmpty()) {
             model.addPoint(e.getPoint());
@@ -169,7 +159,6 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         }
         Graphics g = image.getGraphics();
         g.setColor(model.getColor());
-        //drawRectangle(e.getPoint(), model.getClickPoints().get(0), g);
         g.dispose();
         repaint();
         model.resetPoint();
@@ -181,9 +170,8 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
     public void mouseDragged(MouseEvent e) {
         DrawModel model = DrawModel.getInstance();
         dragged = true;
-        //Graphics g = image.getGraphics();  //画笔
         Graphics2D g = (Graphics2D) image.getGraphics();
-        g.setColor(model.getColor());   //取颜色
+        g.setColor(model.getColor());
 
         Point p = e.getPoint();
         switch (model.getType()) {
@@ -203,7 +191,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
             case "erase":
                 g.setColor(new Color(255, 255, 255, model.getOpacity()));
                 g.fillOval(p.x, p.y, model.getSize(), model.getSize());
-                break;        
+                break;
         }
         g.dispose();
         repaint();
@@ -227,7 +215,6 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
         if(!DrawModel.getInstance().getType().equals("erase") && DrawModel.getInstance().getShape().isEmpty()) return;
         MainController.applyModification(image, new ActionPanel(DrawModel.getInstance().getType(), image));
         dragged = false;
-        //Graphics g = image.getGraphics();
         Graphics2D g = (Graphics2D) image.getGraphics();
         g.setColor(model.getColor());
         
@@ -242,9 +229,8 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
     @Override
     public void mouseExited(MouseEvent e) {
     }
-    //修改
+
     public void drawshape(int x1, int y1, int x2, int y2, Graphics g) {
-    	//System.out.println("绘图");
         DrawModel model = DrawModel.getInstance();
         switch (model.getShape()) {
             case "Line":
@@ -259,31 +245,7 @@ public class ImagePanel extends JPanel implements Serializable, MouseListener, M
             	
         }
     }
-    /*
-    //画多边形
-    public void drawPolygon() {
-        DrawModel drawModel = DrawModel.getInstance();
-        Graphics g = image.getGraphics();
-        g.setColor(drawModel.getColor());
 
-
-        int[] xpoint = new int[drawModel.getNbshape()];
-        int[] ypoint = new int[drawModel.getNbshape()];
-
-        for (int i = 0; i < drawModel.getNbshape(); i++) {
-            xpoint[i] = (int) drawModel.getClickPoints().get(i).getX();
-            ypoint[i] = (int) drawModel.getClickPoints().get(i).getY();
-        }
-
-        Polygon p = new Polygon(xpoint, ypoint, drawModel.getNbshape());
-        g.fillPolygon(p);
-        g.dispose();
-        repaint();
-        drawModel.resetPoint();
-        MainController.applyModification(image, new ActionPanel(DrawModel.getInstance().getType(), image));
-        return;
-    }
-	*/
     public void bucketFill(Point p) {
         DrawModel drawModel = DrawModel.getInstance();
         BufferedImage img = MainModel.getInstance().getImg().getImage();

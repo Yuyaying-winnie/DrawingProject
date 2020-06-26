@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-//项目容器
+//绘画项目
 public class ProjectPanel extends JPanel{
 
     public JPanel projectPanel;

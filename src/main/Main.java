@@ -12,12 +12,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MainView view = new MainView(); //顶层框架 继承JFrame
+        MainView view = new MainView();
         MainController controller = new MainController(view);
-        MainModel.getInstance().setMainView(view);  //单例模式
-        view.addActionsListeners(controller); //给controller一个监听者,事件发生传给它
+        MainModel.getInstance().setMainView(view);
+        view.addActionsListeners(controller);
         final JPanel panel = view.getContent();
-        final String title = "treibe_a";
+        final String title = "Little Painter";
 
         //事件分发线程
         SwingUtilities.invokeLater(() -> {

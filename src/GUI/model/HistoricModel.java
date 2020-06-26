@@ -10,10 +10,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Vector;
 
-/**
- * Created by pandat on 05/05/16.
- */
-
+//历史记录
 public class HistoricModel {
 
     private ArrayList<HistoricController> historic;
@@ -28,14 +25,7 @@ public class HistoricModel {
         this.historic = new ArrayList<>();
         this.historicList = new JList<>();
 
-        /*
-           监听鼠标事件
-           MouseListener接口中有很多方法，而其中很多并不一定是我们需要的，
-           但是我们在实现该接口的类时又必须实现MouseListener接口中所有的方法。
-           庆幸的是，MouseAdapter类实现了MouseListener接口中的所有方法（就是空方法，并没有编写方法的具体执行过程），
-           我们可以直接继承该类并重写我们需要的方法就可以了
-           适配器模式？？？
-         */
+
         historicList.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
                 if (historicList.getSelectedIndex() > getHistoric().getCurrentId()) {
@@ -49,7 +39,6 @@ public class HistoricModel {
             }
         });
 
-        //On change we repaint the historic, with a thread in order to gain a lot of performances
 
         historicList.addListSelectionListener(new ListSelectionListener() {
             @Override

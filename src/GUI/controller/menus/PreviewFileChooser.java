@@ -12,15 +12,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-//预览图片
+//预览
 public class PreviewFileChooser extends JPanel implements PropertyChangeListener {
     private JFileChooser jfc;
     private Image img;
 
     public PreviewFileChooser(JFileChooser jfc) {
         this.jfc = jfc;
-        Dimension dimension = new Dimension(350, 350); //封装了一个控件的高度和宽度
-        setPreferredSize(dimension);//设置最好的大小，会跟随整体变化而变化
+        Dimension dimension = new Dimension(350, 350);
+        setPreferredSize(dimension);
     }
 
     public void propertyChange(PropertyChangeEvent evt) {

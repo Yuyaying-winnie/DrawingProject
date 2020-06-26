@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import java.awt.*;
 
-
+//工具容器
 public class MyToolbar extends JPanel {
     private JPanel mainPanel;
     private JPanel drawPanel = new JPanel();
@@ -146,7 +146,7 @@ public class MyToolbar extends JPanel {
         add(textPanel);
 
     }
-     /** 修改，选择画圆、矩形、直线 **/
+     /**  选择画圆、矩形、直线 **/
     public void generatePolygonsMenu() {
 
         JPanel jPanel = new JPanel();
@@ -274,7 +274,6 @@ public class MyToolbar extends JPanel {
         drawbutton.setText("Choose your color");
         drawbutton.addActionListener(e -> {
                     DrawModel.getInstance().setColor(JColorChooser.showDialog(null, "Choose your color", Color.WHITE));
-                    //remove transparency from colorchooser
                     jPanel.setBackground(new Color(DrawModel.getInstance().getColor().getRGB() | 0xFF000000));
                 }
         );

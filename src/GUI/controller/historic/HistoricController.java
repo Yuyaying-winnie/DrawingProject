@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 /**
- * 历史记录容器
+ * 历史记录
  */
 public class HistoricController implements Serializable {
 
@@ -45,7 +45,7 @@ public class HistoricController implements Serializable {
             actions.add(a);
             return;
         }
-        //This line is here to fix a reference bug
+
         actions.add(0,new ActionPanel(getLastHistoricName(),getHistoricImage()));
         this.actions = new ArrayList<ActionPanel>(this.actions.subList(1, this.actions.size() - modify));
         modify = 0;

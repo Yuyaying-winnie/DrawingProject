@@ -37,10 +37,7 @@ public class MenuController {
         PreviewFileChooser preview = new PreviewFileChooser(fc);
         fc.addPropertyChangeListener(preview);
         fc.setAccessory(preview); //预览所选的图像文件
-        /*
-               fc.showOpenDialog(model.mainPanel)
-               model.mainPanel 显示对话框在主容器中央
-         */
+
         if (fc.showOpenDialog(model.mainPanel) == JFileChooser.APPROVE_OPTION) {
             for (File file : fc.getSelectedFiles()) {
                 if (!file.canRead() || !file.canWrite()) {
@@ -55,7 +52,6 @@ public class MenuController {
 
     public void openFile(File file) {
         if (file.getName().endsWith(".myPSD")) {
-            //OPEN A SERIALIZABLE FILE
             FileInputStream fin = null;
             try {
 
@@ -65,7 +61,6 @@ public class MenuController {
                 ObjectInputStream ois = new ObjectInputStream(fin);
                 ImagePanel img = (ImagePanel) ois.readObject();
 
-                //PREPARE HISTORIC
                 img.getHistoric().buildImages();
                 ProjectPanel p = new ProjectPanel(new ImagePanel(img.getHistoric().getHistoricImage(), file.getPath()));
                 HistoricModel.getInstance().setHistoric(img.getHistoric());
@@ -191,9 +186,8 @@ public class MenuController {
         fc.setMultiSelectionEnabled(false); //该文件选择器只能选择一个文件
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutput oos = null;
-        /*
-              保存文件的弹出框
-         */
+
+        // 保存文件的弹出框
         if (fc.showSaveDialog(model.mainPanel) == JFileChooser.APPROVE_OPTION) {
             try {
                 if (!fc.getSelectedFile().canRead() || !fc.getSelectedFile().canWrite())
@@ -312,20 +306,16 @@ public class MenuController {
                              public boolean accept(File f) {
                                  try {
                                      if (f.getName().length() < 5 && !f.getName().contains(".")) {
-                                         // System.out.println("1"+f.getName());
                                           return false;
                                      }
                                      if (f.isDirectory()) {
-                                       //  System.out.println("2"+f.getName());
                                          return true;
                                      } else if (
 
                                              filters.contains(f.getName().substring(f.getName().length() - 4, f.getName().length()))) {
-                                        // System.out.println("3"+f.getName());
                                          return true;
                                      } else if (
                                              filters.contains(f.getName().substring(f.getName().length() - 6, f.getName().length()))) {
-                                         //System.out.println("4"+f.getName());
                                          return true;
                                      } else return false;
                                  } catch (Exception e) {
@@ -381,7 +371,6 @@ public class MenuController {
         if(name.indexOf(format)==-1) {
             f = new File(fc.getCurrentDirectory(), name +"."+format);
             System.out.println("renamed");
-            System.out.println(f.getName());
         }
         try {
                BufferedImage rendImage = MainModel.getInstance().getImg().getImage();

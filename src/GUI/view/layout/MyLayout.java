@@ -9,21 +9,17 @@ import java.awt.*;
 
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 
+//布局
 @SuppressWarnings("unchecked")
 public class MyLayout {
 
     //生成布局
     public void generateLayout(MainController controller) {
         MainModel model = MainModel.getInstance();
-        /*
-        BorderLayout，边界布局管理器。
-        它把 Container 按方位分为 5 个区域（东、西、南、北、中），每个区域放置一个组件。
-         */
         model.mainPanel.setLayout(new BorderLayout());
 
         JTabbedPane panelDraw = model.panelDraw;  //选项卡面板
         panelDraw.setPreferredSize(new Dimension(600, 600));
-   //     panelDraw.setBackground(new Color(255, 255, 255));
         model.mainPanel.add(panelDraw, BorderLayout.CENTER);
 
         /****** MENU *****/
@@ -41,18 +37,6 @@ public class MyLayout {
         panelStatus.add(model.statusBar);
 
         model.mainPanel.add(panelStatus, BorderLayout.PAGE_END);
-
-        /**** HISTORIC ****/
-        //TODO 取消显示历史图片
-//        JList panelHistoric = HistoricModel.getInstance().historicList;
-//        panelHistoric.setSize(new Dimension(200,0));
-//        panelHistoric.setBackground(new Color(150, 150, 150));
-//        panelHistoric.setSelectionBackground(Color.LIGHT_GRAY);
-//        panelHistoric.setCellRenderer(new MyHistoricRender());
-//        JScrollPane spane = new JScrollPane(panelHistoric);  //滚动面板
-//        spane.getVerticalScrollBar().setMaximumSize(model.mainPanel.getSize());
-//        spane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
-//        model.mainPanel.add(spane, BorderLayout.EAST);
 
 
         /** TOOLBAR **/

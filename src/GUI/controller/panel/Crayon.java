@@ -14,8 +14,6 @@ public class Crayon extends Pen{
     @Override
     public void draw() {
         g.fillOval(p.x, p.y, model.getSize(), model.getSize());
-       // g.setStroke(new BasicStroke(model.getSize()));
-
     }
 }
 
