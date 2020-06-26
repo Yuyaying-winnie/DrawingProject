@@ -1,4 +1,4 @@
-# DrawingProject v1.0
+# Little Painter v1.0
 ## **功能列表**
 
 #### 1.多类型画笔（铅笔、蜡笔、毛笔）
